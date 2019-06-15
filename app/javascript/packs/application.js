@@ -4,8 +4,12 @@
 // that code so it'll be compiled.
 
 //= require jquery
-//= require uikit
-//= require uikit-components
+//= require bootstrap
+//= require rails-ujs
+//= require turbolinks
+//= require_tree .
+
+import 'bootstrap'
 
 require("@rails/ujs").start()
 require("turbolinks").start()
