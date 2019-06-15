@@ -1,0 +1,213 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Motorcycle Color Palette */
+// $yellow: #feda6a;
+// light: #d4d4dc;
+// $gray: #393f4d;
+// $slate: #1d1e22;
+
+/* Dashboard Color Palette */
+$light-gray: #f8f9fa;
+$med-gray: #434857;
+$dark-gray: #252830;
+$darkest-gray: #1e2127;
+
+$purple: #9F86FF;
+$light-purple: #bcaaff;
+
+$green: #37c98d;
+$light-green: #5fd9b0;
+
+$red: #e64659;
+$light-red: #ed7e8b;
+
+$yellow: #e4d836;
+$light-yellow: #ece471;
+
+$blue: #31a8dd;
+
+:root {
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #1997c6;
+    --secondary: #6c757d;
+    --success: #1BC98E;
+    --info: #9F86FF;
+    --warning: #E4D836;
+    --danger: #E64759;
+    --light: #f8f9fa;
+    --dark: #1a1c22;
+}
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* universal */
+
+html {
+  background-color: $dark-gray;
+  color: $light-gray;
+}
+
+body {
+  background-color: $dark-gray;
+  padding-top: 60px;
+}
+
+.jumbotron {
+  background-color: $med-gray;
+  color: $light-gray;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  color: $light-gray;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
+p {
+  color: $light-gray;
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $light-gray;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: $blue;
+    text-decoration: none;
+  }
+}
+
+.navbar {
+  background-color: $darkest-gray;
+}
+
+/* forms */
+
+form {
+  color: $light-gray;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  color: black;
+  height: auto !important;
+}
+
+#error_explanation {
+  color: $red;
+  ul {
+    color: $red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+/* buttons */
+
+.nr {
+  color: #1997c6;
+  background-color: transparent;
+  background-image: none;
+  border-color: #1997c6;
+  &:hover {
+    background-color:  #1997c6;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $light-gray;
+  a {
+    color: $light-gray;
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
