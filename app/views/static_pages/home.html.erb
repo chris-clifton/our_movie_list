@@ -1,9 +1,5 @@
-<div class="center jumbotron">
-  <h1>Welcome to Our Movie List!</h1>
-
-  <h2>
-    This is the home page for Our Movie List.
-  </h2>
-
-  <%= link_to "Sign up now!", signup_path, class: "nr btn btn-lg btn-primary" %>
-</div>
+<% if logged_in? %>
+  <%= render 'static_pages/logged_in_home' %>
+<% else %>
+  <%= render 'static_pages/logged_out_home' %>
+<% end %>

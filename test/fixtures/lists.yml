@@ -1,0 +1,47 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+bones:
+  name: "List One"
+  user: bones
+
+bones_list_two:
+  name: "List Two"
+  user: bones
+
+bones_list_three:
+  name: "List Three"
+  user: bones
+
+bones_list_four:
+  name: "List Four"
+  user: bones
+
+<% 30.times do |n| %>
+list_<%= n %>:
+  name: <%= Faker::Name.name %>
+  user: bones
+<% end %>
+
+archer_list_one:
+  name: "Archer one"
+  user: archer
+
+archer_list_two:
+  name: "Archer two"
+  user: archer
+
+archer_list_three:
+  name: "Archer three"
+  user: archer
+
+archer_list_four:
+  name: "Archer four"
+  user: archer
+
+lana_list_one:
+  name: "Lana one"
+  user: lana
+
+lana_list_two:
+  name: "Lana two"
+  user: lana

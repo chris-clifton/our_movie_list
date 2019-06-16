@@ -25,3 +25,10 @@ User.create!(name:  "bones",
                 activated: true,
                 activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+50.times do |n|
+  name = Faker::Name.name
+  users.each { |user| user.lists.create!(name: "#{user.name}'s list ##{n}") }
+end
+

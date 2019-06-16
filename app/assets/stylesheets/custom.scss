@@ -28,6 +28,42 @@ $light-yellow: #ece471;
 
 $blue: #31a8dd;
 
+/*Bootstrap button outline override*/
+
+.btn-outline {
+  background-color: transparent;
+  color: inherit;
+  transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+  color: #428bca;
+}
+
+.btn-success.btn-outline {
+  color: #5cb85c;
+}
+
+.btn-info.btn-outline {
+  color: #5bc0de;
+}
+
+.btn-warning.btn-outline {
+  color: #f0ad4e;
+}
+
+.btn-danger.btn-outline {
+  color: #d9534f;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+  color: #fff;
+}
+
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -211,12 +247,44 @@ footer {
 
 /* Users index */
 
-.users {
+.user {
   list-style: none;
   margin: 0;
   li {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $med-gray;
+  }
+}
+
+/* Lists */
+
+.lists {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid $med-gray;
+  }
+  .user {
+    margin-top: 5em;
+    margin-left: 60px;
+    padding-top: 0;
+  }
+  .list_name {
+    display: block;
+    margin-left: 60px;
+  }
+  .actions_panel {
+    display: block;
+    padding: 0;
+    margin-left: 60px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
   }
 }

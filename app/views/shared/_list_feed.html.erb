@@ -1,0 +1,6 @@
+<% if @list_feed_items.any? %>
+  <ol class="lists">
+    <%= render @list_feed_items %>
+  </ol>
+  <%= will_paginate @list_feed_items %>
+<% end %>
