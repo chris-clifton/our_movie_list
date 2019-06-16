@@ -38,18 +38,21 @@ $blue: #31a8dd;
 /* universal */
 
 html {
-  background-color: $dark-gray;
-  color: $light-gray;
+  background-color: white;
+  color: black;
 }
 
 body {
-  background-color: $dark-gray;
+  background-color: white;
   padding-top: 60px;
 }
 
 .jumbotron {
   background-color: $med-gray;
   color: $light-gray;
+  h2 {
+    color: $light-gray;
+  }
 }
 
 section {
@@ -75,7 +78,7 @@ textarea {
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
-  color: $light-gray;
+  color: $darkest-gray;
   line-height: 1;
 }
 
@@ -95,7 +98,7 @@ h2 {
 }
 
 p {
-  color: $light-gray;
+  color: $darkest-gray;
   font-size: 1.1em;
   line-height: 1.7em;
 }
@@ -124,7 +127,7 @@ p {
 /* forms */
 
 form {
-  color: $light-gray;
+  color: $darkest-gray;
 }
 
 input, textarea, select, .uneditable-input {
@@ -175,9 +178,9 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: $light-gray;
+  color: $darkest-gray;
   a {
-    color: $light-gray;
+    color: $darkest-gray;
     &:hover {
       color: $blue;
       text-decoration: none;
