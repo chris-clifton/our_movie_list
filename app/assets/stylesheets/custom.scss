@@ -28,18 +28,6 @@ $light-yellow: #ece471;
 
 $blue: #31a8dd;
 
-:root {
-    --gray: #6c757d;
-    --gray-dark: #343a40;
-    --primary: #1997c6;
-    --secondary: #6c757d;
-    --success: #1BC98E;
-    --info: #9F86FF;
-    --warning: #E4D836;
-    --danger: #E64759;
-    --light: #f8f9fa;
-    --dark: #1a1c22;
-}
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
