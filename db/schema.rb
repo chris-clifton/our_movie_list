@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_16_161742) do
+ActiveRecord::Schema.define(version: 2019_06_16_234535) do
 
   create_table "lists", force: :cascade do |t|
     t.text "name", null: false
@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 2019_06_16_161742) do
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
-  create_table "lists_movies", force: :cascade do |t|
+  create_table "movie_lists", force: :cascade do |t|
     t.integer "list_id", null: false
     t.integer "movie_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["list_id"], name: "index_lists_movies_on_list_id"
-    t.index ["movie_id"], name: "index_lists_movies_on_movie_id"
+    t.index ["list_id"], name: "index_movie_lists_on_list_id"
+    t.index ["movie_id"], name: "index_movie_lists_on_movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -53,6 +53,6 @@ ActiveRecord::Schema.define(version: 2019_06_16_161742) do
   end
 
   add_foreign_key "lists", "users"
-  add_foreign_key "lists_movies", "lists"
-  add_foreign_key "lists_movies", "movies"
+  add_foreign_key "movie_lists", "lists"
+  add_foreign_key "movie_lists", "movies"
 end
