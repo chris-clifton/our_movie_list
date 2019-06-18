@@ -13,9 +13,5 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-
-  # May want to revisit this: going to see how far we get working with
-  # lists through the User's home and profile page but will still likely
-  # require independent actions/views for list operations
-  resources :lists,               only: [:create, :destroy]
+  resources :lists
 end
