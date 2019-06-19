@@ -29,6 +29,14 @@ class ListsController < ApplicationController
   end
 
   def update
+    @list = current_user.lists.build(list_params)
+    if @list.save
+      flash[:success] = "List created!"
+      redirect_to root_url
+    else
+      @list_feed_items = []
+      render 'static_pages/home'
+    end
   end
 
   def destroy
@@ -43,8 +51,5 @@ class ListsController < ApplicationController
       params.require(:list).permit(:name)
     end
 
-    def correct_user
-      @list = current_user.lists.find_by(id: params[:id])
-      redirect_to root_url if @list.nil?
-    end
+    
 end
