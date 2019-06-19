@@ -56,6 +56,10 @@ $blue: #31a8dd;
   color: #d9534f;
 }
 
+.btn-secondary.btn-outline {
+  color: #6b747c;
+}
+
 .btn-primary.btn-outline:hover,
 .btn-success.btn-outline:hover,
 .btn-info.btn-outline:hover,
@@ -275,16 +279,26 @@ footer {
     display: block;
     margin-left: 60px;
   }
-  .actions_panel {
-    display: block;
-    padding: 0;
-    margin-left: 60px;
-  }
+  
 }
 
 aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
+  }
+}
+
+.actions_panel {
+  display: block;
+  padding: 0;
+}
+ul {
+  display: inline-block;
+  list-style: none;
+  text-align: center;
+  li {
+    display: inline-block;
+    
   }
 }

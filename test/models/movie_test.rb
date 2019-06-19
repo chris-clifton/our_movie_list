@@ -19,4 +19,9 @@ class MovieTest < ActiveSupport::TestCase
     @movie.name = "a" * 51
     assert_not @movie.valid?
   end
+
+  test "name should be unique" do
+    new_movie = Movie.create(name: @movie.name)
+    assert_not new_movie.valid?
+  end
 end

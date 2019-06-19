@@ -1,0 +1,19 @@
+<h1> <%= @movie.name %> </h1>
+
+<ul class="actions_panel">
+  <li><%= link_to "Add Movie to List", '#', class: "btn btn-success btn-outline" %></li>
+  <li> <%= link_to "Edit Movie",  edit_movie_path(@movie), class: "btn btn-info btn-outline" %></li>
+  <li><%= link_to "Delete Movie", @movie, method: :delete, class: "btn btn-danger btn-outline",
+                                                   data: { confirm: "Are you sure?" } %></li>
+  <li><%= link_to "Back to Movies", movies_path, class: "btn btn-secondary btn-outline"%>
+</ul>
+
+
+<p>Stuff to put here</p>
+<ul>
+  <li>Movie Poster</li>
+  <li>Movie info: length, rating </li>
+  <li>Movie availability(plex/netflix/hbo/etc.)</li>
+</ul>
+
+

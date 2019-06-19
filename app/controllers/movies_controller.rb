@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
+    @movie = Movie.new
     @movies = Movie.all
   end
 
@@ -16,7 +17,7 @@ class MoviesController < ApplicationController
     @movie = Movie.create(movie_params)
     if @movie.save
       flash[:success] = "Movie added!"
-      redirect_to @movie
+      redirect_to movies_path
     else
       render 'new'
     end
@@ -30,7 +31,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     if @movie.update(movie_params)
       flash[:success] = "Movie updated!"
-      redirect to @movie
+      redirect_to @movie
     else
       render 'edit'
     end
@@ -38,6 +39,8 @@ class MoviesController < ApplicationController
 
   def destroy
     @movie = Movie.find(params[:id]).destroy
+    flash[:success] = "Movie deleted!"
+    redirect_to movies_path
   end
 
   private
