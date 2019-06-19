@@ -3,9 +3,11 @@ class ListsController < ApplicationController
   before_action :correct_user, only: :destroy
 
   def index
+    @lists = List.where('user_id = ?', current_user.id)
   end
 
   def show
+    @list = List.find(params[:id])
   end
   
   def new

@@ -1,0 +1,8 @@
+<h1> This is a list! </h1>
+<h2> <%= @list.name %></h2>
+  
+<ul class="actions_panel">
+  <li><%= link_to "Add Movies", '#', class: "btn btn-success btn-outline btn-sm" %></li>
+  <li> <%= link_to "Edit List",  edit_list_path(@list), class: "btn btn-info btn-outline btn-sm" %></li>
+  <li><%= link_to "Delete List", @list, method: :delete, class: "btn btn-danger btn-outline btn-sm"%></li>
+</ul>
