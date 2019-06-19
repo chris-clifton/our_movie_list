@@ -1,5 +1,7 @@
 class List < ApplicationRecord
   belongs_to :user
+  has_many :movie_lists
+  has_many :movies, through: :movie_lists
   
   validates :user_id, presence: true
   validates :name, presence: true, length: { maximum: 50 }

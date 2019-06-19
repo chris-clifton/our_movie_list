@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :lists
   resources :movies
+  resources :movie_lists,         only: [:new, :create, :update, :destroy]
 end
