@@ -1,3 +1,12 @@
+<% provide(:button_text, 'Add New Movie')%>
 <h1> All Movies </h1>
-
-<%= render @movies %>
+<div class="row">
+  <div class="col-md-4">
+    <%= render @movies %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <%= render 'movie_form' %>
+  </div>
+</div>

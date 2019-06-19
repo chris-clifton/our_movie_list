@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
+    @movie = Movie.new
     @movies = Movie.all
   end
 
@@ -16,7 +17,7 @@ class MoviesController < ApplicationController
     @movie = Movie.create(movie_params)
     if @movie.save
       flash[:success] = "Movie added!"
-      redirect_to @movie
+      redirect_to movies_path
     else
       render 'new'
     end
