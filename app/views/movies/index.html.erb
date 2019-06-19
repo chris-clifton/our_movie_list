@@ -1,12 +1,12 @@
 <% provide(:button_text, 'Add New Movie')%>
 <h1> All Movies </h1>
-<div class="row">
+
+<ul class="actions_panel">
+  <li><%= link_to "Add New Movie", new_movie_path, class: "btn btn-success btn-outline" %></li>
+</ul>
+
+<div class="row movie-index">
   <div class="col-md-4">
     <%= render @movies %>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    <%= render 'movie_form' %>
   </div>
 </div>
