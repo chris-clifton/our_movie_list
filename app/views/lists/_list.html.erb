@@ -1,14 +1,4 @@
 <li id="list-<%= list.id %>">
   <span class="user"><%= link_to list.user.name, list.user %></span>
-  <span class="list_name"><%= list.name %></span>
-  <% if current_user?(list.user) %>
-
-    <ul class="actions_panel">
-
-      <%= link_to "Add Movies", '#', class: "btn btn-success btn-outline btn-sm" %>
-      <%= link_to "Edit List",  edit_list_path(list), class: "btn btn-info btn-outline btn-sm" %>
-      <%= link_to "Delete List", list, method: :delete, class: "btn btn-danger btn-outline btn-sm"%>
-
-    </ul>
-  <% end %>
+  <span class="list_name"><%= link_to list.name, list %></span>
 </li>
