@@ -1,7 +1,7 @@
 <h1> Add Movie to List (movie_lists#new)</h1>
 
   <%= form_for(@movie_list) do |f| %>
-    <%= f.hidden_field :movie_id, movie_id: @movie.id %>
+    <%= f.hidden_field :movie_id, value: @movie.id %>
     <%= f.collection_select(:list_id, @lists, :id, :name) %>
     <%= f.submit "Add Movie to List" %>
   <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_19_030331) do
+ActiveRecord::Schema.define(version: 2019_06_20_015335) do
 
   create_table "lists", force: :cascade do |t|
     t.text "name", null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_06_19_030331) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["list_id"], name: "index_movie_lists_on_list_id"
+    t.index ["movie_id", "list_id"], name: "index_movie_lists_on_movie_id_and_list_id", unique: true
     t.index ["movie_id"], name: "index_movie_lists_on_movie_id"
   end
 
