@@ -1,21 +1,10 @@
 <h1> <%= @movie.name %> </h1>
 
 <ul class="actions_panel">
-  <li>
-    <%= link_to "Add Movie to List", new_movie_list_path(movie_id: @movie.id),
-                class: "btn btn-success btn-outline" %>
-  </li>
-  <li>
-    <%= link_to "Edit Movie",  edit_movie_path(@movie),
-                               class: "btn btn-info btn-outline" %></li>
-  <li>
-    <%= link_to "Delete Movie", @movie, method: :delete, class: "btn btn-danger btn-outline",
-                 data: { confirm: "Are you sure?" } %>
-  </li>
-  <li>
-    <%= link_to "Back to Movies", movies_path,
-                                  class: "btn btn-secondary btn-outline"%>
-  </li>
+  <li><%= link_to "Add Movie to List", new_movie_list_path(movie_id: @movie.id)%></li>
+  <li><%= link_to "Edit Movie",  edit_movie_path(@movie)%></li>
+  <li><%= link_to "Delete Movie", @movie, method: :delete, data: { confirm: "Are you sure?" } %></li>
+  <li><%= link_to "Back to Movies", movies_path %></li>
 </ul>
 
 

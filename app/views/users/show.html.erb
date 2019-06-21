@@ -1,16 +1,13 @@
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
+
+    <section>
       <h1> <%= @user.name %> </h1>
     </section>
-  </aside>
-  <div class="col-md-8">
+
+  
     <% if @user.lists.any? %>
       <h3> Lists (<%= @user.lists.count %>) </h3>
-      <ol class="lists">
+      <ol>
         <%= render @lists %>
       <ol>
       <%= will_paginate @lists %>
     <% end %>
-  </div>
-</div>
