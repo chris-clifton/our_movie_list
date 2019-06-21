@@ -13,7 +13,7 @@ class MovieListsController < ApplicationController
     @list = List.find(params[:movie_list][:list_id])
     if @movie_list.save
       flash[:success] = "#{@movie.name} added to '#{@list.name}'"
-      redirect_to @movie
+      redirect_to @list
     else
       flash[:warning] = "#{@movie.name} is already on #{@list.name}'"
       redirect_to @movie

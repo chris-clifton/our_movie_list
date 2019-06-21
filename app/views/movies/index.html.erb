@@ -2,11 +2,11 @@
 <h1> All Movies </h1>
 
 <ul class="actions_panel">
-  <li><%= link_to "Add New Movie", new_movie_path, class: "btn btn-success btn-outline" %></li>
+  <li><%= link_to "Add New Movie", new_movie_path%></li>
 </ul>
 
-<div class="row movie-index">
-  <div class="col-md-4">
+<div>
+  <div>
     <%= render @movies %>
   </div>
 </div>
