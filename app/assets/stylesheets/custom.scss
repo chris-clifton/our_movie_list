@@ -1,43 +1,58 @@
-// @import "bootstrap-sprockets";
-// @import "bootstrap";
+// @mixin box_sizing {
+//   -moz-box-sizing:    border-box;
+//   -webkit-box-sizing: border-box;
+//   box-sizing:         border-box;
+// }
 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
+// /* universal */
+
+// html {
+//   box-sizing: border-box;
+// }
+// *, *:before, *:after {
+//   box-sizing: inherit;
+// }
+
+header        { grid-area: header; }
+footer        { grid-area: footer; }
+main          { grid-area: main; }
+.sidebar-nav  { grid-area: navigation; }
+.sidebar-ads  { grid-area: ads; }
+
+body {
+  display: grid;
+  grid-template-areas:  "header header header"
+                        "navigation main ads"
+                        "footer footer footer";
+  grid-template-columns: 150px 1fr 150px;
+  grid-template-rows: 50px
+                      1fr
+                      50px;
+  min-height: 100vh;
 }
 
-/* universal */
-
-.container {
-  display: grid;    
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 50px auto 50px;
+@media screen and (max-width: 600px) {
+  body {
+    grid-template-areas:  "header"
+                          "navigation"
+                          "main"
+                          "ads"
+                          "footer";
+    grid-template-columns: 100%;
+    grid-template-rows:   50px
+                          50px
+                          1fr
+                          50px
+                          50px;
+  }   
 }
 
 header {
-  display: flex;
-  grid-column: span 12;
-  grid-template-columns: repeat(10, 1fr);
-  background-color: rgb(22, 26, 22);
-}
-
-aside {
-  grid-column: span 1;
-  background-color: white;
-  border-right: rgb(238, 237, 237) solid 1px;
-}
-
-main {
-  grid-column: span 11;
-  font-family: helvetica, sans-serif;
-  box-sizing: border-box;
-  margin: 0px 50px;
+  background: black;
 }
 
 footer {
-  grid-column: span 12;
-  background-color: orange;
+  background: orange;
 }
 
 nav li {
@@ -55,7 +70,7 @@ nav li {
   }
 }
 
-.sidebar ul {
+.sidebar-nav ul {
   padding: 0;
   display: block;
   li {
@@ -68,7 +83,11 @@ nav li {
   }
 }
 
-.footer a {
+.sidebar-ads {
+  background-color: gray;
+}
+
+.footer nav a {
   color: black;
 }
 
@@ -99,12 +118,12 @@ nav li {
 //   line-height: 1;
 // }
 
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
+// h1 {
+//   font-size: 3em;
+//   letter-spacing: -2px;
+//   margin-bottom: 30px;
+//   text-align: center;
+// }
 
 // h2 {
 //   font-size: 1.2em;
