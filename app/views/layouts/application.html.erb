@@ -6,12 +6,11 @@
     <%= render 'layouts/shim' %>
   </head>
 
-  <body>
-    <div class="container">
-      <header> <%= render 'layouts/header' %> </header>
-      
-      <aside> <%= render 'layouts/sidebar' %> </aside>
-      
+  <body class="container">
+      <header>
+        <%= render 'layouts/header' %>
+      </header>
+
       <main>
         <% flash.each do |message_type, message| %>
           <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
@@ -20,7 +19,16 @@
         <%= yield %>
       </main>
       
-      <footer> <%= render 'layouts/footer' %> </footer>
-    </div>     
+      <aside class="sidebar-nav">
+        <%= render 'layouts/left_sidebar' %>
+      </aside>
+      
+      <aside class="sidebar-ads">
+        <%= render 'layouts/right_sidebar' %>
+      </aside>
+
+      <footer class="hg-footer">
+        <%= render 'layouts/footer' %>
+      <footer class="hg-footer">
   </body>
 </html>

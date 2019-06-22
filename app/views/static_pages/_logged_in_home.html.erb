@@ -1,14 +1,9 @@
 <% provide(:button_text, 'Create List') %>
 
-<div class>
- 
-    <section>
-      <%= render 'shared/user_info' %>
-    </section>
-    <section>
-      <%= render 'lists/list_form' %>
-    </section>
-  
+<div>
+  <%= render 'shared/user_info' %>
+  <%= render 'lists/list_form' %>
+
   <div>
     <h3> Movie Lists </h3>
     <%= render 'shared/list_feed' %>
