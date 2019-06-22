@@ -1,0 +1,13 @@
+<div class="movies-index">
+  <% @movies.each do |movie| %>
+    <ul>
+      <li>
+        <figure>    
+          <%= link_to image_tag("https://via.placeholder.com/123x185/000000/FFFFFF?text=movie", class: 'movie-poster'), movie_path(movie)%>
+          <figcaption> <%= link_to movie.name, movie %> </figcaption>
+          <figcaption class="movie-year"> 2019 </figcaption>
+        </figure>        
+      </li>
+    </ul>
+  <% end %>
+</div>
