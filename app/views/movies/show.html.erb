@@ -1,18 +1,24 @@
-<h1> <%= @movie.name %> </h1>
+<section class="movie-card">  
+  <div class="movie-data">
+    <img src="https://via.placeholder.com/240x360/000000/FFFFFF?text=movie", class="movie-poster", alt="Blank movie poster placeholder"/>
+  </div>
 
-<ul class="actions_panel">
-  <li><%= link_to "Add Movie to List", new_movie_list_path(movie_id: @movie.id)%></li>
-  <li><%= link_to "Edit Movie",  edit_movie_path(@movie)%></li>
-  <li><%= link_to "Delete Movie", @movie, method: :delete, data: { confirm: "Are you sure?" } %></li>
-  <li><%= link_to "Back to Movies", movies_path %></li>
-</ul>
+  <div class="movie-data">
+    <h1> <%= @movie.name %> </h1>
 
+    <ul class="action-panel">
+      <li><%= link_to "Add Movie to List", new_movie_list_path(movie_id: @movie.id)%></li>
+      <li><%= link_to "Edit Movie",  edit_movie_path(@movie)%></li>
+      <li><%= link_to "Delete Movie", @movie, method: :delete, data: { confirm: "Are you sure?" } %></li>
+      <li><%= link_to "Back to Movies", movies_path %></li>
+    </ul>
 
-<p>Stuff to put here</p>
-<ul>
-  <li>Movie Poster</li>
-  <li>Movie info: length, rating </li>
-  <li>Movie availability(plex/netflix/hbo/etc.)</li>
-</ul>
-
+    <p>Stuff to put here</p>
+    <ul>
+      <li>Movie Poster</li>
+      <li>Movie info: length, rating </li>
+      <li>Movie availability(plex/netflix/hbo/etc.)</li>
+    </ul>
+  </div>
+</section>
 

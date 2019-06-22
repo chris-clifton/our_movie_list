@@ -29,6 +29,7 @@ body {
                       1fr
                       50px;
   min-height: 100vh;
+  font-family: helvetica, sans-serif;
 }
 
 @media screen and (max-width: 600px) {
@@ -56,11 +57,12 @@ footer {
 }
 
 nav li {
-  font-family: courier;
+  font-family: helvetica, sans-serif;
   display: inline-block;
   list-style: none;
   padding: 0 15px;
   &:hover {
+    margin-bottom: -5px;
     border-bottom: orange solid 5px;
   }
   a {
@@ -70,15 +72,19 @@ nav li {
   }
 }
 
-.sidebar-nav ul {
-  padding: 0;
-  display: block;
-  li {
+.sidebar-nav {
+  border-right: solid rgb(233, 233, 233) 1px;
+    ul {
+    padding: 0;
     display: block;
-    padding: 10px;
-    a {
-      width: 100%;
-      color: black;
+    li {
+      display: block;
+      padding: 0;
+      margin: 20px;
+      a {
+        width: 100%;
+        color: black;
+      }
     }
   }
 }
@@ -105,10 +111,68 @@ nav li {
   letter-spacing: -1px;
   padding-top: 9px;
   padding-left: 15px;
-  font-family: courier;
+  font-family: helvetica, sans-serif;
   &:hover {
     color: orange;
   }
+}
+
+.movies-index {
+  ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  figcaption {
+    text-align: center;
+    }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  }
+}
+
+.movie-year {
+  color: grey;
+}
+
+.action-panel li {
+  display: inline-block;
+}
+
+.movies-index-search {
+  display: block;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 200px;
+}
+
+.movie-poster {
+  color: white;
+  &:hover {
+    outline: solid orange 5px;
+  }
+}
+
+.movie-card {
+  margin: 20px;
+  padding: 20px;
+}
+
+.movie-data {
+  display: inline-block;
+  margin: 10px 25px;
+}
+
+.user-card {
+  margin: 20px;
+  padding: 20px;
+}
+
+.user-data {
+  display: inline-block;
+  margin: 10px 25px;
 }
 
 // /* typography */
