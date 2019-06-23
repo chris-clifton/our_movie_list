@@ -1,8 +1,10 @@
-// @mixin box_sizing {
-//   -moz-box-sizing:    border-box;
-//   -webkit-box-sizing: border-box;
-//   box-sizing:         border-box;
-// }
+@import "bootstrap";
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
 
 // /* universal */
 
@@ -29,6 +31,7 @@ body {
                       1fr
                       50px;
   min-height: 100vh;
+  min-width: 100vw;
   font-family: helvetica, sans-serif;
 }
 
@@ -52,8 +55,30 @@ header {
   background: black;
 }
 
+main {
+  padding: 25px 25px;
+}
+
 footer {
   background: orange;
+  a {
+    color: black;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;;
+  }
 }
 
 nav li {
@@ -66,7 +91,7 @@ nav li {
     border-bottom: orange solid 5px;
   }
   a {
-    text-align: left;
+    height: 100%;
     color: white;
     text-decoration: none;
   }
@@ -91,10 +116,6 @@ nav li {
 
 .sidebar-ads {
   background-color: gray;
-}
-
-.footer nav a {
-  color: black;
 }
 
 .alert {
@@ -141,10 +162,19 @@ nav li {
   display: inline-block;
 }
 
-.movies-index-search {
+.search {
   display: block;
   margin: 0 auto;
   padding: 20px 0;
+  width: 200px;
+}
+
+.add-movie {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.create-list {
   width: 200px;
 }
 
@@ -155,9 +185,13 @@ nav li {
   }
 }
 
-.movie-card {
+.movie-card-large {
   margin: 20px;
   padding: 20px;
+}
+
+.movie-card-small {
+  padding: 10px;
 }
 
 .movie-data {
@@ -166,7 +200,6 @@ nav li {
 }
 
 .user-card {
-  margin: 20px;
   padding: 20px;
 }
 

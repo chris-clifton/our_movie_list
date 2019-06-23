@@ -7,28 +7,28 @@
   </head>
 
   <body class="container">
-      <header>
-        <%= render 'layouts/header' %>
-      </header>
+    <header>
+      <%= render 'layouts/header' %>
+    </header>
 
-      <main>
-        <% flash.each do |message_type, message| %>
-          <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-        <% end %>
+    <main>
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
 
-        <%= yield %>
-      </main>
-      
-      <aside class="sidebar-nav">
-        <%= render 'layouts/sidebar_nav' %>
-      </aside>
-      
-      <aside class="sidebar-ads">
-        <%= render 'layouts/sidebar_ads' %>
-      </aside>
+      <%= yield %>
+    </main>
+    
+    <aside class="sidebar-nav">
+      <%= render 'layouts/sidebar_nav' %>
+    </aside>
+    
+    <aside class="sidebar-ads">
+      <%= render 'layouts/sidebar_ads' %>
+    </aside>
 
-      <footer class="hg-footer">
-        <%= render 'layouts/footer' %>
-      <footer class="hg-footer">
+    <footer class="hg-footer footer">
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>
