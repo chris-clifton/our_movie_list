@@ -3,7 +3,14 @@
     <ul>
       <li class="movie-card-small">
         <figure>    
-          <%= link_to image_tag("https://via.placeholder.com/160x215/000000/FFFFFF?text=movie", class: 'movie-poster'), movie_path(movie)%>
+            <% if movie.poster.attached? %>
+              <%= link_to image_tag(movie.poster.variant(resize: "160x215")), movie_path(movie), class: "movie-poster" %>
+            <% else %>
+              <%= link_to image_tag("https://via.placeholder.com/160x215/000000/FFFFFF?text=movie"), movie_path(movie), class: "movie-poster" %>
+            <% end %>
+
+
+
           <figcaption> <%= link_to movie.short_name, movie %> </figcaption>
           <figcaption class="movie-year"> 2019 </figcaption>
         </figure>        

@@ -1,10 +1,10 @@
 <h1> <%= @list.name %> </h1>
   
 <ul class="action-panel">
-  <li><%= link_to "Add Movies", movies_path%></li>
-  <li><%= link_to "Edit List",  edit_list_path(@list)%></li>
-  <li><%= link_to "Delete List", @list, method: :delete, data: { confirm: "Are you sure?" } %></li>
-  <li><%= link_to "Back to Lists", current_user%></li>
+  <li><%= link_to "Add Movies", movies_path, class: "btn-sm btn-success" %></li>
+  <li><%= link_to "Edit List",  edit_list_path(@list), class: "btn-sm btn-primary"%></li>
+  <li><%= link_to "Delete List", @list, class: "btn-sm btn-danger", method: :delete, data: { confirm: "Are you sure?" } %></li>
+  <li><%= link_to "Back to Lists", current_user, class: "btn-sm btn-secondary"%></li>
 </ul>
 
 <p>Stuff to put here</p>

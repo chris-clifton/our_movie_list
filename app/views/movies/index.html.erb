@@ -2,6 +2,6 @@
   <input type="text" placeholder="Find Movies">
 </div>
 <div class="add-movie">
-  <%= button_to "Add New Movie", new_movie_path, method: :get %>
+  <%= button_to "Add New Movie", new_movie_path, method: :get, class: "btn btn-success" %>
 </div>
 <%= render 'shared/movies' %>
