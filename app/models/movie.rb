@@ -4,4 +4,13 @@ class Movie < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }, 
                    uniqueness: true
 
+  # Currently working off character-length in view of small-size movie poster
+  def short_name
+    if name.length > 17
+      name[0...14] + "..."
+    else
+      name
+    end
+  end
+
 end

@@ -3,6 +3,8 @@ class ListsController < ApplicationController
   before_action :correct_user, only: :destroy
 
   def index
+    @list = List.new
+    @user = current_user
     @lists = List.where('user_id = ?', current_user.id)
   end
 
