@@ -32,9 +32,9 @@ class ListsController < ApplicationController
   end
 
   def update
-    @list = current_user.lists.build(list_params)
-    if @list.save
-      flash[:success] = "List created!"
+    @list = List.find(params[:id])
+    if @list.update(list_params)
+      flash[:success] = "List updated!"
       redirect_to root_url
     else
       @list_feed_items = []
@@ -45,7 +45,7 @@ class ListsController < ApplicationController
   def destroy
     @list.destroy
     flash[:success] = "List deleted."
-    redirect_to request.referrer || root_url
+    redirect_to lists_path
   end
 
   private

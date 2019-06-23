@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one_attached :avatar
   has_many :lists, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
 
