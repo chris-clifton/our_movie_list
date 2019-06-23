@@ -1,17 +1,20 @@
 <section class="user-card">
   <div class="user-data">
-    <img src="https://via.placeholder.com/240/000000/FFFFFF?text=user",
-    class="user-profile-pic", alt="Picture of the user"/>
+    <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar.variant(resize: "250x250") %>
+    <% else %>
+      <img src="https://via.placeholder.com/240/000000/FFFFFF?text=user",
+      class="user-profile-pic", alt="Profile Picture"/>
+    <% end %>
   </div>
 
   <div class="user-data">
-    <h1> <%= @user.name %>
-
+    <h1> <%= @user.name %> </h1>
     <% if @user.lists.any? %>
-      <h3> Lists(<%= @user.lists.count %>) </h3>
-      <ol>
+      <h3> Lists (<%= @user.lists.count %>) </h3>
+      <ul>
         <%= render @lists %>
-      </ol>
+      </ul>
       <%= will_paginate @lists %>
     <% end %>
   </div>

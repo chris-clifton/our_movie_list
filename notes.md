@@ -13,3 +13,14 @@
     <%= will_paginate @lists %>
   <% end %>
 </div>
+
+
+<% if movie.poster.attached? %>
+  <%= link_to image_tag movie.poster.variant(resize: "160x215") %>
+<% else %>
+  <img src="https://via.placeholder.com/160x215/000000/FFFFFF?text=movie", class="movie-poster",
+  alt="Blank movie poster placeholder"/>
+<% end %>
+
+
+ <%= link_to image_tag(movie.poster.variant(resize: "160x215")), movie_path(movie)%>

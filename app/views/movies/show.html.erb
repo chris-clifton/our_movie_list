@@ -1,6 +1,12 @@
 <section class="movie-card-large">  
   <div class="movie-data">
-    <img src="https://via.placeholder.com/240x360/000000/FFFFFF?text=movie", class="movie-poster", alt="Blank movie poster placeholder"/>
+    <% if @movie.poster.attached? %>
+      <%= image_tag @movie.poster.variant(resize: "220x290") %>
+    <% else %>
+      <img src="https://via.placeholder.com/240x360/000000/FFFFFF?text=movie",
+       alt="Blank movie poster placeholder"/>
+    <% end %>
+    
   </div>
 
   <div class="movie-data">
