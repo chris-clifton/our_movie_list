@@ -1,17 +1,12 @@
-# Movies#index
-- Small plex movie placeholder: https://via.placeholder.com/123x185/000000/FFFFFF?text=movie
-- Large plex movie placeholder: https://via.placeholder.com/240x360/000000/FFFFFF?text=movie
+require 'test_helper'
 
- require 'test_helper'
-
-class FriendshipTest < ActiveSupport::TestCase
-
-  def setup
-    @friend_1 = users(:bones)
-    @friend_2 = users(:archer)
+class FriendshipsControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @friend1 = users(:bones)
+    @friend2 = users(:archer)
     @no_friends = users(:lana)
-
-    @friendship = Friendship.new(user_id: @friend_1.id, friend_user_id: @friend_2.id)
+    @friendship = Friendship.new(user_id: @friend1.id, friend_id: @friend2.id)
+    #current_user = @friend1
   end
 
   test "should be valid" do
@@ -19,7 +14,7 @@ class FriendshipTest < ActiveSupport::TestCase
   end
 
   test "should require friend_user_id" do
-    @friendship.friend_user_id = nil
+    @friendship.friend_id = nil
     assert_not @friendship.valid?
   end
 
@@ -35,3 +30,4 @@ class FriendshipTest < ActiveSupport::TestCase
     @friend1.unfriend(@no_friends)
     assert_not @friend1.friends?(@no_friends)
   end
+end

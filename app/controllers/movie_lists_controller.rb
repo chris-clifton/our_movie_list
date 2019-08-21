@@ -15,7 +15,7 @@ class MovieListsController < ApplicationController
       flash[:success] = "#{@movie.name} added to '#{@list.name}'"
       redirect_to @list
     else
-      flash[:warning] = "#{@movie.name} is already on #{@list.name}'"
+      flash[:warning] = "#{@movie.name} is already on '#{@list.name}'"
       redirect_to @movie
     end
   end

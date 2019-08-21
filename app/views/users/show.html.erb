@@ -1,13 +1,15 @@
 <section class="user-card">
-  <div class="user-data">
+  <section class="user-data">
     <% if @user.avatar.attached? %>
       <%= image_tag @user.avatar.variant(resize: "250x250") %>
     <% else %>
       <img src="https://via.placeholder.com/240/000000/FFFFFF?text=user",
       class="user-profile-pic", alt="Profile Picture"/>
     <% end %>
-  </div>
-
+    <%= render 'shared/stats' %>
+    <%= render 'friends_form' if logged_in? %>
+  </section>
+  
   <div class="user-data">
     <h1> <%= @user.name %> </h1>
     <% if @user.lists.any? %>

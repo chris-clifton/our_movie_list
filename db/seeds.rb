@@ -27,8 +27,12 @@ User.create!(name:  "bones",
 end
 
 users = User.order(:created_at).take(6)
-50.times do |n|
+10.times do |n|
   name = Faker::Name.name
   users.each { |user| user.lists.create!(name: "#{user.name}'s list ##{n}") }
 end
 
+users = User.all
+user  = users.first
+friends = users[2..50]
+friends.each { |friend_user| user.friend(friend_user) }

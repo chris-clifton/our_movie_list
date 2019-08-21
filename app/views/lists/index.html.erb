@@ -1,17 +1,15 @@
 <% provide(:button_text, "Create List") %>
 
-<div class="search">
-  <input type="text" placeholder="Find List">
-</div>
-
 <h1>Lists</h1>
-<div>
-  <%= render 'shared/user_info' %>
-</div>
 
+<section class="list-container">
+  <div class="private-list-card">
+    <h3>Private Lists (+)</h3>
+    <%= render @lists %>
+  </div>
 
-
-<div class="create-list">
-  <%= render 'list_form' %>
-</div>
-<%= render @lists %>
+  <div class="group-list-card">
+    <h3>Group Lists (+)</h3>
+      <%= render @lists %>
+  </div>
+</section>

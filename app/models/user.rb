@@ -6,6 +6,11 @@ class User < ApplicationRecord
   before_create :create_activation_digest
   before_save :downcase_email
 
+  has_many :friendships
+  has_many :friends, :through => :friendships
+  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
+  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :name,  presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 },
@@ -69,6 +74,22 @@ class User < ApplicationRecord
 
   def list_feed
     List.where("user_id = ?", id)
+  end
+
+  def friends
+    friendships + inverse_friendships
+  end
+
+  def friend(other_user)
+    friends << other_user
+  end
+
+  def unfriend(other_user)
+    friends.delete(other_user)
+  end
+
+  def friends?(other_user)
+    friends.include?(other_user)
   end
 
   private
