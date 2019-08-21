@@ -1,3 +1,11 @@
+<h1> <%= @movie.name %></h1>
+<ul class="action-panel">
+  <li><%= link_to "Add Movie to List", new_movie_list_path(movie_id: @movie.id), class: "btn-sm btn-success" %></li>
+  <li><%= link_to "Edit Movie",  edit_movie_path(@movie), class: "btn-sm btn-primary" %></li>
+  <li><%= link_to "Delete Movie", @movie, method: :delete, class: "btn-sm btn-danger", data: { confirm: "Are you sure?" } %></li>
+  <li><%= link_to "Back to Movies", movies_path, class: "btn-sm btn-secondary" %></li>
+</ul>
+
 <section class="movie-card-large">  
   <div class="movie-data">
     <% if @movie.poster.attached? %>
@@ -6,19 +14,9 @@
       <img src="https://via.placeholder.com/240x360/000000/FFFFFF?text=movie",
        alt="Blank movie poster placeholder"/>
     <% end %>
-    
   </div>
 
   <div class="movie-data">
-    <h1> <%= @movie.name %> </h1>
-
-    <ul class="action-panel">
-      <li><%= link_to "Add Movie to List", new_movie_list_path(movie_id: @movie.id), class: "btn-sm btn-success" %></li>
-      <li><%= link_to "Edit Movie",  edit_movie_path(@movie), class: "btn-sm btn-primary" %></li>
-      <li><%= link_to "Delete Movie", @movie, method: :delete, class: "btn-sm btn-danger", data: { confirm: "Are you sure?" } %></li>
-      <li><%= link_to "Back to Movies", movies_path, class: "btn-sm btn-secondary" %></li>
-    </ul>
-
     <p>Stuff to put here</p>
     <ul>
       <li>Movie Poster</li>

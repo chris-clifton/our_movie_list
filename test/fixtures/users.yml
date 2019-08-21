@@ -1,5 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 bones:
+  id: 1
   name: bones
   email: bones@boneyard.com
   password_digest: <%= User.digest('password') %>
@@ -8,6 +9,7 @@ bones:
   activated_at: <%= Time.zone.now %>
 
 archer:
+  id: 2
   name: archer
   email: duchess@example.gov
   password_digest: <%= User.digest('password') %>
@@ -15,6 +17,7 @@ archer:
   activated_at: <%= Time.zone.now %>
 
 lana:
+  id: 3
   name: Lana Kane
   email: hands@example.gov
   password_digest: <%= User.digest('password') %>
@@ -22,6 +25,7 @@ lana:
   activated_at: <%= Time.zone.now %>
 
 malory:
+  id: 4
   name: Malory Archer
   email: boss@example.gov
   password_digest: <%= User.digest('password') %>
@@ -30,6 +34,7 @@ malory:
 
 <% 30.times do |n| %>
 user_<%= n %>:
+  id: <%= n + 100 %>
   name:  <%= "User #{n}" %>
   email: <%= "user-#{n}@example.com" %>
   password_digest: <%= User.digest('password') %>

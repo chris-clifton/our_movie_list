@@ -85,4 +85,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to root_url
   end
+
+  test "should redirect friends when not logged in" do
+    get friends_user_path(@user)
+    assert_redirected_to login_url
+  end
 end

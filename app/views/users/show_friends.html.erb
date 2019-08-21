@@ -1,0 +1,28 @@
+<aside>
+  <section class="user-info">
+    <%= @user.avatar %>
+    <h1> <%= @user.name %></h1>
+    <span><%= link_to "View Profile", @user %></span>
+    <span><b>Lists:</b> <%= @user.lists.count %></span>
+  </section>
+  <section class="stats">
+  <%= render 'shared/stats' %>
+    <% if @users.any %>
+      <div class="user-avatars">
+        <% @users.each do |user| %>
+          <%= link_to @user.avatar.variant(resize: 30), user %>
+        <% end %>
+      </div>
+    <% end %>
+  </section>
+</aside>
+
+<div>
+  <h3> Friends </h3>
+  <% if @users.any? %>
+    <ul class="users friends">
+      <%= render @users %>
+    <ul>
+    <%= will_paginate %>
+  <% end %>
+</div>

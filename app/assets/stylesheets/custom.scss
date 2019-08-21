@@ -51,6 +51,10 @@ body {
   }   
 }
 
+h1, h2{
+  text-align: center;
+}
+
 header {
   background: black;
 }
@@ -60,7 +64,7 @@ main {
 }
 
 footer {
-  background: orange;
+  background: white;
   a {
     color: black;
   }
@@ -86,13 +90,9 @@ nav li {
   display: inline-block;
   list-style: none;
   padding: 0 15px;
-  &:hover {
-    margin-bottom: -5px;
-    border-bottom: orange solid 5px;
-  }
   a {
     height: 100%;
-    color: white;
+    color: black;
     text-decoration: none;
   }
 }
@@ -158,8 +158,12 @@ nav li {
   color: grey;
 }
 
-.action-panel li {
+.action-panel {
+  text-align: center;
+  li {
   display: inline-block;
+  text-align: center;
+  }
 }
 
 .search {
@@ -180,9 +184,6 @@ nav li {
 
 .movie-poster {
   color: white;
-  &:hover {
-    outline: solid orange 5px;
-  }
 }
 
 .movie-card-large {
@@ -200,13 +201,42 @@ nav li {
 }
 
 .user-card {
+  display: inline-block;
+  vertical-align: top;
   padding: 20px;
-  margin: 20px;
+  border: solid black 1px;
 }
 
-.user-data {
+.list-container {
+  text-align: center;
+    
+}
+
+.group-list-card {
   display: inline-block;
-  margin: 10px 25px;
+  vertical-align: top;
+  width: 40%;
+  min-width: 200px;
+  padding: 20px;
+  margin: 10px;
+  border: solid black 1px;
+}
+
+.private-list-card {
+  display: inline-block;
+  vertical-align: top;
+  width: 40%;
+  min-width: 200px;
+  padding: 20px;
+  margin: 10px;
+  border: solid black 1px;
+}
+
+.list-card {
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px;
+  border: solid black 1px;
 }
 
 // /* typography */
