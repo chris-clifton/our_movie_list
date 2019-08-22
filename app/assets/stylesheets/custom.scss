@@ -85,15 +85,17 @@ a {
   }
 }
 
-nav li {
+nav {
+  padding: 0 20px;
+  li {
   font-family: helvetica, sans-serif;
   display: inline-block;
   list-style: none;
-  padding: 0 15px;
   a {
     height: 100%;
     color: black;
     text-decoration: none;
+    }
   }
 }
 
@@ -114,10 +116,6 @@ nav li {
   }
 }
 
-.sidebar-ads {
-  background-color: gray;
-}
-
 .alert {
   text-align: center;
 }
@@ -134,7 +132,20 @@ nav li {
   padding-left: 15px;
   font-family: helvetica, sans-serif;
   &:hover {
-    color: orange;
+    color: goldenrod;
+  }
+}
+
+#signup-link {
+  text-align: center;
+}
+
+.user-form {
+  max-width: 400px;
+  margin: 0 auto;
+  p {
+    text-align: center;
+    margin: 10px;
   }
 }
 
