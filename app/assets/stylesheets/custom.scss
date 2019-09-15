@@ -6,6 +6,11 @@
   box-sizing:         border-box;
 }
 
+// development
+// * {
+//   outline: 1px red solid;
+// }
+
 // /* universal */
 
 // html {
@@ -140,7 +145,7 @@ nav {
   text-align: center;
 }
 
-.user-form {
+.user-form, .movie-form {
   max-width: 400px;
   margin: 0 auto;
   p {
